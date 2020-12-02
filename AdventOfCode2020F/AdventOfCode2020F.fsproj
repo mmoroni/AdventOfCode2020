@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Day2.fs" />
+    <Compile Include="Day1.fs" />
     <None Include="App_Data\view-source_https___adventofcode.com_2020_day_2_input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -14,7 +16,5 @@
     </None>
     <Compile Include="Program.fs" />
   </ItemGroup>
-
-  <ItemGroup />
 
 </Project>
