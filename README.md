@@ -9,4 +9,4 @@ Here are some friends repositories for the Advent of Code 2020 in other language
 
 - Python -> https://github.com/gfnord/advent2020
 - Rust -> thiago#7638 @ Discord
-- Node.js -> Alex Kayser @ Whatsapp
+- Node.js -> https://github.com/akctba/adventOfCode
