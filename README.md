@@ -8,5 +8,7 @@ The C# project (AdventOfCode2020) with the first day puzzle is still there, but 
 Here are some friends repositories for the Advent of Code 2020 in other language:
 
 - Python -> https://github.com/gfnord/advent2020
-- Rust -> thiago#7638 @ Discord
+- Rust -> https://github.com/thiagomg/AoC-Rust
 - Node.js -> https://github.com/akctba/adventOfCode
+- F# -> https://github.com/bamorim/AdventOfCode2020
+- F# -> https://github.com/jilleJr/adventofcode-2020-fsharp
