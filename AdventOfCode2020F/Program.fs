@@ -1,11 +1,16 @@
-﻿open System
+﻿namespace moroni.aoc.y2020
 
-[<EntryPoint>]
-let main argv =
+open System
 
-    Day1.Main
-    Day2.Main
-    Day3.Main
-    Day4.Main
+module Program =
 
-    0
+    [<EntryPoint>]
+    let main argv =
+    
+        Day1.Main
+        Day2.Main
+        Day3.Main
+        Day4.Main
+        Day5.Main
+
+        0

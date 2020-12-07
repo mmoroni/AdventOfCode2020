@@ -1,42 +1,44 @@
-﻿module Day2
+﻿namespace moroni.aoc.y2020
 
-type PasswordPolicy = { Number1: int; Number2: int; Letter: char; Password: string }
+module Day2 =
 
-let CreatePP (input:string) : PasswordPolicy = 
-    let segments = input.Split('-', ' ', ':');
-    {
-        Number1 = segments.[0] |> int
-        Number2 = segments.[1] |> int
-        Letter = segments.[2].[0]
-        Password = segments.[4]
-    }        
+    type PasswordPolicy = { Number1: int; Number2: int; Letter: char; Password: string }
 
-let CountValidPasswords (passwords:seq<PasswordPolicy>) = 
-    passwords
-    |> Seq.where (fun p -> 
-        p.Password 
-        |> Seq.where (fun c-> c = p.Letter) 
-        |> Seq.length 
-        |> function n -> n >= p.Number1 && n <= p.Number2)
-    |> Seq.length
+    let CreatePP (input:string) : PasswordPolicy = 
+        let segments = input.Split('-', ' ', ':');
+        {
+            Number1 = segments.[0] |> int
+            Number2 = segments.[1] |> int
+            Letter = segments.[2].[0]
+            Password = segments.[4]
+        }        
 
-let ValidateNewPolicy p = 
-    let v1 = p.Password.Length >= p.Number1 && p.Password.[p.Number1-1] = p.Letter;
-    let v2 = p.Password.Length >= p.Number2 && p.Password.[p.Number2-1] = p.Letter;
-    v1 && not v2 || v2 && not v1
+    let CountValidPasswords (passwords:seq<PasswordPolicy>) = 
+        passwords
+        |> Seq.where (fun p -> 
+            p.Password 
+            |> Seq.where (fun c-> c = p.Letter) 
+            |> Seq.length 
+            |> function n -> n >= p.Number1 && n <= p.Number2)
+        |> Seq.length
 
-let CountValidPasswordsNewPolicy passwords = 
-    passwords
-    |> Seq.where ValidateNewPolicy
-    |> Seq.length
+    let ValidateNewPolicy p = 
+        let v1 = p.Password.Length >= p.Number1 && p.Password.[p.Number1-1] = p.Letter;
+        let v2 = p.Password.Length >= p.Number2 && p.Password.[p.Number2-1] = p.Letter;
+        v1 && not v2 || v2 && not v1
 
-let Main = 
-    let result = System.IO.File.ReadAllLines(@"App_Data\view-source_https___adventofcode.com_2020_day_2_input.txt")    
+    let CountValidPasswordsNewPolicy passwords = 
+        passwords
+        |> Seq.where ValidateNewPolicy
+        |> Seq.length
 
-    let passwords = 
-        Seq.ofArray result
-        |> Seq.map CreatePP
+    let Main = 
+        let result = System.IO.File.ReadAllLines(@"App_Data\view-source_https___adventofcode.com_2020_day_2_input.txt")    
 
-    printfn "%A" (CountValidPasswords passwords)      
+        let passwords = 
+            Seq.ofArray result
+            |> Seq.map CreatePP
 
-    printfn "%A" (CountValidPasswordsNewPolicy passwords)
+        printfn "%A" (CountValidPasswords passwords)      
+
+        printfn "%A" (CountValidPasswordsNewPolicy passwords)
