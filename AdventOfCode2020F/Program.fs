@@ -13,5 +13,6 @@ module Program =
         Day4.Main
         Day5.Main
         Day6.Main
+        Day7.Main
 
         0

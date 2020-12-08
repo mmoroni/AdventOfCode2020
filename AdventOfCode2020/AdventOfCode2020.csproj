@@ -22,6 +22,9 @@
     <None Update="App_Data\view-source_https___adventofcode.com_2020_day_6_input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="App_Data\view-source_https___adventofcode.com_2020_day_7_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

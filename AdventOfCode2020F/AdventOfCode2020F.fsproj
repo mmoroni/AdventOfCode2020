@@ -6,12 +6,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Day7.fs" />
     <Compile Include="Day6.fs" />
     <Compile Include="Day5.fs" />
     <Compile Include="Day4.fs" />
     <Compile Include="Day3.fs" />
     <Compile Include="Day2.fs" />
     <Compile Include="Day1.fs" />
+    <None Include="App_Data\view-source_https___adventofcode.com_2020_day_7_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="App_Data\view-source_https___adventofcode.com_2020_day_6_input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
