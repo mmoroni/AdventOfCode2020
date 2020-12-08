@@ -16,24 +16,19 @@ module Day6 =
     let Main =
         let lines = readLines "App_Data/view-source_https___adventofcode.com_2020_day_6_input.txt"
         
-        let sections = splitSections lines       
+        let sections = splitSections lines
 
         let yesAnyoneCount = 
             sections
-            |> Seq.map (fun section -> section |> Seq.reduce (+))
-            |> Seq.map (fun answers -> 
-                answers                
-                |> Seq.groupBy (fun s -> s)
-                )
-            |> Seq.map (fun y -> y |> Seq.length)
+            |> Seq.map (id >> Seq.reduce (+) >> Set >> Seq.length)            
             |> Seq.sum
 
         let yesEveryoneCount = 
             sections            
             |> Seq.map (fun section -> 
                 section 
-                |> Seq.map (fun s-> s |> Seq.distinct)
-                |> Seq.collect id
+                |> Seq.map (id >> Set)
+                |> Seq.concat
                 |> Seq.countBy id
                 |> Seq.sumBy (fun (c, i) -> if i = section.Length then 1 else 0)
                 )
